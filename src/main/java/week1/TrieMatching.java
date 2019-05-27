@@ -4,36 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Node {
-  public static final int Letters = 4;
-  public static final int NA = -1;
-  public int next[];
-
-  Node() {
-    next = new int[Letters];
-    Arrays.fill(next, NA);
-  }
-}
-
 public class TrieMatching implements Runnable {
   public static void main(String[] args) {
     new Thread(new TrieMatching()).start();
-  }
-
-  int letterToIndex(char letter) {
-    switch (letter) {
-      case 'A':
-        return 0;
-      case 'C':
-        return 1;
-      case 'G':
-        return 2;
-      case 'T':
-        return 3;
-      default:
-        assert (false);
-        return Node.NA;
-    }
   }
 
   List<Integer> solve(String text, int n, List<String> patterns) {
